@@ -1,6 +1,10 @@
-# Folder Path Color
+# Folder Regex Color (Folder Path Color with Regex format)
 
-This extension allows you to color-code folders and files in Visual Studio Code by specifying paths and colors in your workspace settings. The colors are visible in the Explorer view and in the tabs, unless overridden by the app.
+> Fork of [Folder Path Color](https://marketplace.visualstudio.com/items?itemName=VisbyDev.folder-path-color), but with regex paths
+
+This extension allows you to color-code folders and files in Visual Studio Code by specifying paths regex and colors in your workspace settings. The colors are visible in the Explorer view and in the tabs, unless overridden by the app.
+
+![Screenshot](./images/screenshot-00.png)
 
 ![Screenshot](https://user-images.githubusercontent.com/5649576/243261401-2aa9ba17-c25e-40b0-b478-4da80d6a3b93.png)
 
@@ -19,17 +23,48 @@ There are 6 slots for custom colors at this time, which you can update with the 
 
 In the source control tab, custom colors on files won't be visible due to VS Code's design, but the symbol will still be displayed next to the file name, providing a visual cue even in this scenario.
 
+## Example Configuration
+
+```json
+// VS Code User Config
+"folder-regex-color.folders": [
+    {
+      "regex": ".*test.ts$",
+      "color": "custom1"
+    },
+    {
+      "regex": "src/app$",
+      "color": "custom2"
+    },
+    {
+      "regex": "src/components$",
+      "color": "custom3"
+    },
+    {
+      "regex": "src/lib$",
+      "color": "custom4"
+    }
+  ],
+  "workbench.colorCustomizations": {
+    // Folder Regex Plugin
+    "folderRegexColor.custom1": "#31e2cd",
+    "folderRegexColor.custom2": "#ff0000",
+    "folderRegexColor.custom3": "#ffc23d",
+    "folderRegexColor.custom4": "#8ee414",
+  }
+```
+
 ## Requirements
 
 This extension does not have any additional requirements or dependencies.
 
 ## Extension Settings
 
-- `folder-path-color.folders`: An array of objects representing the folders to be colored. Each object can have the following properties:
+- `folder-regex-color.folders`: An array of objects representing the folders to be colored. Each object can have the following properties:
 
 | Property  | Type   | Description                                                                                                                                       |
 | --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `path`    | string | The path of the folder, relative to the workspace.                                                                                                |
+| `regex`   | string | The regex of the folder, relative to the workspace.                                                                                               |
 | `color`   | string | The color to assign to the folder. This should be one of the predefined color names.                                                              |
 | `symbol`  | string | A short symbol to display next to the folder. This should be a string of maximum 2 characters. You can also use an emoji for more visual display. |
 | `tooltip` | string | A tooltip to display when you hover over the folder's symbol.                                                                                     |
@@ -39,13 +74,13 @@ Predefined color names: `blue`, `magenta`, `red`, `cyan`, `green`, `yellow`.
 Example configuration:
 
 ```json
-"folder-path-color.folders": [
-    { "path": "frontend", "symbol": "SR", "tooltip": "Source files" },
-    { "path": "packages/common", "symbol": "T", "tooltip": "Common" }
+"folder-regex-color.folders": [
+    { "regex": "frontend", "symbol": "SR", "tooltip": "Source files" },
+    { "regex": "packages/common", "symbol": "T", "tooltip": "Common" }
 ]
 ```
 
-- `folderPathColor`: A color object with 6 slots to use for custom HEX codes. Used under the `workbench.colorCustomizations` user setting.
+- `folderRegexColor`: A color object with 6 slots to use for custom HEX codes. Used under the `workbench.colorCustomizations` user setting.
 
 | Property  | Type   | Default based on theme (Dark/Light) |
 | --------- | ------ | ----------------------------------- |
@@ -60,9 +95,9 @@ Example configuration:
 
 ```json
 "workbench.colorCustomizations": {
-    "folderPathColor.custom1": "#FF4488",
-    "folderPathColor.custom2": "#88ff44",
-    "folderPathColor.custom3": "#4488FF",
+    "folderRegexColor.custom1": "#FF4488",
+    "folderRegexColor.custom2": "#88ff44",
+    "folderRegexColor.custom3": "#4488FF",
 },
 ```
 

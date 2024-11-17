@@ -1,13 +1,13 @@
 {
-  "name": "folder-path-color",
-  "displayName": "Folder Path Color",
-  "publisher": "VisbyDev",
-  "description": "All subfolders within a specified path will be assigned a color for easy differentiation.",
-  "version": "0.0.14",
+  "name": "folder-regex-color",
+  "displayName": "Folder Regex Color",
+  "publisher": "Jterrazz",
+  "description": "All subfolders within a specified regex will be assigned a color for easy differentiation.",
+  "version": "0.0.15",
   "icon": "/images/logo.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jacob-j/vscode-folder-path-color"
+    "url": "https://github.com/jterrazz/vscode-folder-regex-color"
   },
   "engines": {
     "vscode": "^1.78.0"
@@ -22,13 +22,13 @@
   "contributes": {
     "configuration": {
       "properties": {
-        "folder-path-color.folders": {
+        "folder-regex-color.folders": {
           "type": "array",
           "default": [],
           "items": {
             "type": "object",
             "properties": {
-              "path": {
+              "regex": {
                 "type": "string"
               },
               "color": {
@@ -42,54 +42,54 @@
               }
             }
           },
-          "description": "Array of folder path and color pairs to be colored."
+          "description": "Array of folder regex and color pairs to be colored."
         }
       }
     },
     "colors": [
       {
-        "id": "folderPathColor.custom1",
-        "description": "Assignable custom color 1 for the Folder Path Color extension",
+        "id": "folderRegexColor.custom1",
+        "description": "Assignable custom color 1 for the Folder Regex Color extension",
         "defaults": {
           "dark": "#ABCDEF",
           "light": "#123456"
         }
       },
       {
-        "id": "folderPathColor.custom2",
-        "description": "Assignable custom color 2 for the Folder Path Color extension",
+        "id": "folderRegexColor.custom2",
+        "description": "Assignable custom color 2 for the Folder Regex Color extension",
         "defaults": {
           "dark": "#FEDCBA",
           "light": "#654321"
         }
       },
       {
-        "id": "folderPathColor.custom3",
-        "description": "Assignable custom color 3 for the Folder Path Color extension",
+        "id": "folderRegexColor.custom3",
+        "description": "Assignable custom color 3 for the Folder Regex Color extension",
         "defaults": {
           "dark": "#AADDFF",
           "light": "#336699"
         }
       },
       {
-        "id": "folderPathColor.custom4",
-        "description": "Assignable custom color 4 for the Folder Path Color extension",
+        "id": "folderRegexColor.custom4",
+        "description": "Assignable custom color 4 for the Folder Regex Color extension",
         "defaults": {
           "dark": "#FF99AA",
           "light": "#882244"
         }
       },
       {
-        "id": "folderPathColor.custom5",
-        "description": "Assignable custom color 5 for the Folder Path Color extension",
+        "id": "folderRegexColor.custom5",
+        "description": "Assignable custom color 5 for the Folder Regex Color extension",
         "defaults": {
           "dark": "#AAFF99",
           "light": "#448822"
         }
       },
       {
-        "id": "folderPathColor.custom6",
-        "description": "Assignable custom color 6 for the Folder Path Color extension",
+        "id": "folderRegexColor.custom6",
+        "description": "Assignable custom color 6 for the Folder Regex Color extension",
         "defaults": {
           "dark": "#AA99FF",
           "light": "#442288"
