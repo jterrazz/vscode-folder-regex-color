@@ -9,6 +9,10 @@
     "type": "git",
     "url": "https://github.com/jterrazz/vscode-folder-regex-color"
   },
+  "originalAuthor": {
+    "name": "Zain Chen",
+    "url": "https://github.com/zainchen/vscode-folder-path-color"
+  },
   "engines": {
     "vscode": "^1.78.0"
   },
