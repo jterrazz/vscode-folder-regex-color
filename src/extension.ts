@@ -14,6 +14,20 @@ const colorMap: Record<string, string> = {
   custom4: "folderRegexColor.custom4",
   custom5: "folderRegexColor.custom5",
   custom6: "folderRegexColor.custom6",
+  custom7: "folderRegexColor.custom7",
+  custom8: "folderRegexColor.custom8",
+  custom9: "folderRegexColor.custom9",
+  custom10: "folderRegexColor.custom10",
+  custom11: "folderRegexColor.custom11",
+  custom12: "folderRegexColor.custom12",
+  custom13: "folderRegexColor.custom13",
+  custom14: "folderRegexColor.custom14",
+  custom15: "folderRegexColor.custom15",
+  custom16: "folderRegexColor.custom16",
+  custom17: "folderRegexColor.custom17",
+  custom18: "folderRegexColor.custom18",
+  custom19: "folderRegexColor.custom19",
+  custom20: "folderRegexColor.custom20",
 };
 
 class ColorDecorationProvider implements vscode.FileDecorationProvider {
