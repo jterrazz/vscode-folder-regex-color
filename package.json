@@ -1,239 +1,238 @@
 {
-  "name": "folder-regex-color",
-  "displayName": "Folder Regex Color (Folder Path Color Fork)",
-  "publisher": "Jterrazz",
-  "description": "All subfolders within a specified regex will be assigned a color for easy differentiation.",
-  "version": "1.1.0",
-  "icon": "/images/logo.png",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jterrazz/vscode-folder-regex-color"
-  },
-  "originalAuthor": {
-    "name": "Zain Chen",
-    "url": "https://github.com/zainchen/vscode-folder-path-color"
-  },
-  "engines": {
-    "vscode": "^1.78.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [
-    "onStartupFinished"
-  ],
-  "main": "./dist/extension.js",
-  "contributes": {
-    "configuration": {
-      "properties": {
-        "folder-regex-color.folders": {
-          "type": "array",
-          "default": [],
-          "items": {
-            "type": "object",
-            "properties": {
-              "regex": {
-                "type": "string"
-              },
-              "color": {
-                "type": "string"
-              },
-              "symbol": {
-                "type": "string"
-              },
-              "tooltip": {
-                "type": "string"
-              }
-            }
-          },
-          "description": "Array of folder regex and color pairs to be colored."
-        }
-      }
+    "name": "folder-regex-color",
+    "displayName": "Folder Regex Color (Folder Path Color Fork)",
+    "version": "1.1.0",
+    "private": true,
+    "description": "All subfolders within a specified regex will be assigned a color for easy differentiation.",
+    "categories": [
+        "Other"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jterrazz/vscode-folder-regex-color"
     },
-    "colors": [
-      {
-        "id": "folderRegexColor.custom1",
-        "description": "Assignable custom color 1 for the Folder Regex Color extension",
-        "defaults": {
-          "dark": "#ABCDEF",
-          "light": "#123456"
-        }
-      },
-      {
-        "id": "folderRegexColor.custom2",
-        "description": "Assignable custom color 2 for the Folder Regex Color extension",
-        "defaults": {
-          "dark": "#FEDCBA",
-          "light": "#654321"
-        }
-      },
-      {
-        "id": "folderRegexColor.custom3",
-        "description": "Assignable custom color 3 for the Folder Regex Color extension",
-        "defaults": {
-          "dark": "#AADDFF",
-          "light": "#336699"
-        }
-      },
-      {
-        "id": "folderRegexColor.custom4",
-        "description": "Assignable custom color 4 for the Folder Regex Color extension",
-        "defaults": {
-          "dark": "#FF99AA",
-          "light": "#882244"
-        }
-      },
-      {
-        "id": "folderRegexColor.custom5",
-        "description": "Assignable custom color 5 for the Folder Regex Color extension",
-        "defaults": {
-          "dark": "#AAFF99",
-          "light": "#448822"
-        }
-      },
-      {
-        "id": "folderRegexColor.custom6",
-        "description": "Assignable custom color 6 for the Folder Regex Color extension",
-        "defaults": {
-          "dark": "#AA99FF",
-          "light": "#442288"
-        }
-      },
-      {
-        "id": "folderRegexColor.custom7",
-        "description": "Assignable custom color 7 for the Folder Regex Color extension",
-        "defaults": {
-          "dark": "#FF88CC",
-          "light": "#993366"
-        }
-      },
-      {
-        "id": "folderRegexColor.custom8",
-        "description": "Assignable custom color 8 for the Folder Regex Color extension",
-        "defaults": {
-          "dark": "#88FFCC",
-          "light": "#339966"
-        }
-      },
-      {
-        "id": "folderRegexColor.custom9",
-        "description": "Assignable custom color 9 for the Folder Regex Color extension",
-        "defaults": {
-          "dark": "#CC88FF",
-          "light": "#663399"
-        }
-      },
-      {
-        "id": "folderRegexColor.custom10",
-        "description": "Assignable custom color 10 for the Folder Regex Color extension",
-        "defaults": {
-          "dark": "#FFCC88",
-          "light": "#996633"
-        }
-      },
-      {
-        "id": "folderRegexColor.custom11",
-        "description": "Assignable custom color 11 for the Folder Regex Color extension",
-        "defaults": {
-          "dark": "#88CCFF",
-          "light": "#336699"
-        }
-      },
-      {
-        "id": "folderRegexColor.custom12",
-        "description": "Assignable custom color 12 for the Folder Regex Color extension",
-        "defaults": {
-          "dark": "#FF88CC",
-          "light": "#993366"
-        }
-      },
-      {
-        "id": "folderRegexColor.custom13",
-        "description": "Assignable custom color 13 for the Folder Regex Color extension",
-        "defaults": {
-          "dark": "#88FFAA",
-          "light": "#338844"
-        }
-      },
-      {
-        "id": "folderRegexColor.custom14",
-        "description": "Assignable custom color 14 for the Folder Regex Color extension",
-        "defaults": {
-          "dark": "#FFAA88",
-          "light": "#884433"
-        }
-      },
-      {
-        "id": "folderRegexColor.custom15",
-        "description": "Assignable custom color 15 for the Folder Regex Color extension",
-        "defaults": {
-          "dark": "#AA88FF",
-          "light": "#443388"
-        }
-      },
-      {
-        "id": "folderRegexColor.custom16",
-        "description": "Assignable custom color 16 for the Folder Regex Color extension",
-        "defaults": {
-          "dark": "#88AAFF",
-          "light": "#334488"
-        }
-      },
-      {
-        "id": "folderRegexColor.custom17",
-        "description": "Assignable custom color 17 for the Folder Regex Color extension",
-        "defaults": {
-          "dark": "#FFAA44",
-          "light": "#884422"
-        }
-      },
-      {
-        "id": "folderRegexColor.custom18",
-        "description": "Assignable custom color 18 for the Folder Regex Color extension",
-        "defaults": {
-          "dark": "#44FFAA",
-          "light": "#228844"
-        }
-      },
-      {
-        "id": "folderRegexColor.custom19",
-        "description": "Assignable custom color 19 for the Folder Regex Color extension",
-        "defaults": {
-          "dark": "#AA44FF",
-          "light": "#442288"
-        }
-      },
-      {
-        "id": "folderRegexColor.custom20",
-        "description": "Assignable custom color 20 for the Folder Regex Color extension",
-        "defaults": {
-          "dark": "#44AAFF",
-          "light": "#224488"
-        }
-      }
-    ]
-  },
-  "scripts": {
-    "vscode:prepublish": "yarn run package",
-    "compile": "webpack",
-    "watch": "webpack --watch",
-    "package": "webpack --mode production --devtool hidden-source-map",
-    "lint": "eslint src --ext ts",
-    "vsix": "vsce package",
-    "publish": "vsce publish",
-    "test": "vitest --run --passWithNoTests"
-  },
-  "devDependencies": {
-    "@types/node": "20.2.5",
-    "@types/vscode": "^1.78.0",
-    "@typescript-eslint/eslint-plugin": "^5.59.8",
-    "@typescript-eslint/parser": "^5.59.8",
-    "@vscode/vsce": "^3.2.1",
-    "eslint": "^8.41.0",
-    "ts-loader": "^9.4.3",
-    "typescript": "^5.1.3",
-    "vitest": "^4.1.10",
-    "webpack": "^5.85.0",
-    "webpack-cli": "^5.1.1"
-  }
+    "publisher": "Jterrazz",
+    "main": "./dist/extension.js",
+    "scripts": {
+        "vscode:prepublish": "npm run build",
+        "build": "webpack --mode production --devtool hidden-source-map",
+        "compile": "webpack",
+        "watch": "webpack --watch",
+        "lint": "typescript check",
+        "lint:fix": "typescript fix",
+        "test": "vitest --run --passWithNoTests",
+        "vsix": "vsce package",
+        "publish": "vsce publish"
+    },
+    "devDependencies": {
+        "@jterrazz/typescript": "^10.1.0",
+        "@types/node": "^24.0.0",
+        "@types/vscode": "^1.78.0",
+        "@vscode/vsce": "^3.2.1",
+        "ts-loader": "^9.4.3",
+        "vitest": "^4.1.10",
+        "webpack": "^5.85.0",
+        "webpack-cli": "^5.1.1"
+    },
+    "contributes": {
+        "configuration": {
+            "properties": {
+                "folder-regex-color.folders": {
+                    "type": "array",
+                    "default": [],
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "regex": {
+                                "type": "string"
+                            },
+                            "color": {
+                                "type": "string"
+                            },
+                            "symbol": {
+                                "type": "string"
+                            },
+                            "tooltip": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Array of folder regex and color pairs to be colored."
+                }
+            }
+        },
+        "colors": [
+            {
+                "id": "folderRegexColor.custom1",
+                "description": "Assignable custom color 1 for the Folder Regex Color extension",
+                "defaults": {
+                    "dark": "#ABCDEF",
+                    "light": "#123456"
+                }
+            },
+            {
+                "id": "folderRegexColor.custom2",
+                "description": "Assignable custom color 2 for the Folder Regex Color extension",
+                "defaults": {
+                    "dark": "#FEDCBA",
+                    "light": "#654321"
+                }
+            },
+            {
+                "id": "folderRegexColor.custom3",
+                "description": "Assignable custom color 3 for the Folder Regex Color extension",
+                "defaults": {
+                    "dark": "#AADDFF",
+                    "light": "#336699"
+                }
+            },
+            {
+                "id": "folderRegexColor.custom4",
+                "description": "Assignable custom color 4 for the Folder Regex Color extension",
+                "defaults": {
+                    "dark": "#FF99AA",
+                    "light": "#882244"
+                }
+            },
+            {
+                "id": "folderRegexColor.custom5",
+                "description": "Assignable custom color 5 for the Folder Regex Color extension",
+                "defaults": {
+                    "dark": "#AAFF99",
+                    "light": "#448822"
+                }
+            },
+            {
+                "id": "folderRegexColor.custom6",
+                "description": "Assignable custom color 6 for the Folder Regex Color extension",
+                "defaults": {
+                    "dark": "#AA99FF",
+                    "light": "#442288"
+                }
+            },
+            {
+                "id": "folderRegexColor.custom7",
+                "description": "Assignable custom color 7 for the Folder Regex Color extension",
+                "defaults": {
+                    "dark": "#FF88CC",
+                    "light": "#993366"
+                }
+            },
+            {
+                "id": "folderRegexColor.custom8",
+                "description": "Assignable custom color 8 for the Folder Regex Color extension",
+                "defaults": {
+                    "dark": "#88FFCC",
+                    "light": "#339966"
+                }
+            },
+            {
+                "id": "folderRegexColor.custom9",
+                "description": "Assignable custom color 9 for the Folder Regex Color extension",
+                "defaults": {
+                    "dark": "#CC88FF",
+                    "light": "#663399"
+                }
+            },
+            {
+                "id": "folderRegexColor.custom10",
+                "description": "Assignable custom color 10 for the Folder Regex Color extension",
+                "defaults": {
+                    "dark": "#FFCC88",
+                    "light": "#996633"
+                }
+            },
+            {
+                "id": "folderRegexColor.custom11",
+                "description": "Assignable custom color 11 for the Folder Regex Color extension",
+                "defaults": {
+                    "dark": "#88CCFF",
+                    "light": "#336699"
+                }
+            },
+            {
+                "id": "folderRegexColor.custom12",
+                "description": "Assignable custom color 12 for the Folder Regex Color extension",
+                "defaults": {
+                    "dark": "#FF88CC",
+                    "light": "#993366"
+                }
+            },
+            {
+                "id": "folderRegexColor.custom13",
+                "description": "Assignable custom color 13 for the Folder Regex Color extension",
+                "defaults": {
+                    "dark": "#88FFAA",
+                    "light": "#338844"
+                }
+            },
+            {
+                "id": "folderRegexColor.custom14",
+                "description": "Assignable custom color 14 for the Folder Regex Color extension",
+                "defaults": {
+                    "dark": "#FFAA88",
+                    "light": "#884433"
+                }
+            },
+            {
+                "id": "folderRegexColor.custom15",
+                "description": "Assignable custom color 15 for the Folder Regex Color extension",
+                "defaults": {
+                    "dark": "#AA88FF",
+                    "light": "#443388"
+                }
+            },
+            {
+                "id": "folderRegexColor.custom16",
+                "description": "Assignable custom color 16 for the Folder Regex Color extension",
+                "defaults": {
+                    "dark": "#88AAFF",
+                    "light": "#334488"
+                }
+            },
+            {
+                "id": "folderRegexColor.custom17",
+                "description": "Assignable custom color 17 for the Folder Regex Color extension",
+                "defaults": {
+                    "dark": "#FFAA44",
+                    "light": "#884422"
+                }
+            },
+            {
+                "id": "folderRegexColor.custom18",
+                "description": "Assignable custom color 18 for the Folder Regex Color extension",
+                "defaults": {
+                    "dark": "#44FFAA",
+                    "light": "#228844"
+                }
+            },
+            {
+                "id": "folderRegexColor.custom19",
+                "description": "Assignable custom color 19 for the Folder Regex Color extension",
+                "defaults": {
+                    "dark": "#AA44FF",
+                    "light": "#442288"
+                }
+            },
+            {
+                "id": "folderRegexColor.custom20",
+                "description": "Assignable custom color 20 for the Folder Regex Color extension",
+                "defaults": {
+                    "dark": "#44AAFF",
+                    "light": "#224488"
+                }
+            }
+        ]
+    },
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "icon": "/images/logo.png",
+    "engines": {
+        "vscode": "^1.78.0"
+    },
+    "originalAuthor": {
+        "name": "Zain Chen",
+        "url": "https://github.com/zainchen/vscode-folder-path-color"
+    }
 }
