@@ -10,42 +10,40 @@ and where a change to the color slots has to land twice.
 | Where does a new color slot go?          | Adding a color slot            |
 | How is a change proven?                  | [03-testing.md](03-testing.md) |
 
-This repository does not use the `@jterrazz` toolchain: it is a standalone
-VS Code extension with its own webpack, ESLint and TypeScript config,
-published to the marketplace by hand rather than through the estate's CLI
-or CI.
+The repository is a consumer of `@jterrazz/typescript`, on its `node`
+profile: one devDependency carries the compiler, the rulebook, the
+formatter and every pass of `typescript check`. What stays its own is the
+webpack bundle VS Code loads, and the marketplace publishing.
 
 ## The toolchain
 
-| Task                        | Command        |
-| --------------------------- | -------------- |
-| Compile once                | `yarn compile` |
-| Compile and watch           | `yarn watch`   |
-| Lint                        | `yarn lint`    |
-| Run the test suite          | `yarn test`    |
-| Build the production bundle | `yarn package` |
-| Package the `.vsix`         | `yarn vsix`    |
+| Task                        | Command                          |
+| --------------------------- | -------------------------------- |
+| Install                     | `make install`                   |
+| Build the production bundle | `make build` (`npm run build`)   |
+| Compile and watch           | `npm run watch`                  |
+| Check everything            | `make lint` (`typescript check`) |
+| Repair what a fixer can     | `npm run lint:fix`               |
+| Run the test suite          | `make test`                      |
+| Package the `.vsix`         | `npm run vsix`                   |
 
-Compiling runs `webpack` against `webpack.config.js`, which uses `ts-loader`
-to read `src/**/*.ts` straight from TypeScript — there is no separate
-`tsc` build step for the extension code itself. `tsconfig.json` answers for the
-editor's own typechecking and for nothing else; `strict` is on
-(`tsconfig.json:9`).
+Compiling runs `webpack` against `webpack.config.mjs`, which uses
+`ts-loader` to read `src/**/*.ts` straight from TypeScript — there is no
+separate `tsc` build step for the extension code itself. `tsconfig.json` is
+one line, extending the toolchain's `node` preset; the only thing the
+bundle overrides is `noEmit`, because the preset type-checks and webpack
+needs the emit (`webpack.config.mjs`, the `ts-loader` options).
 
-One lifecycle hook matters more than the script names suggest:
-`vscode:prepublish` runs `package` (the production webpack build) before
-`vsce` reads `dist/` — see [04-operating.md](04-operating.md). It is
-hardcoded to `yarn run` even though the repository also carries a
-`package-lock.json` (`package.json`, `scripts["vscode:prepublish"]`):
-running that lifecycle through `npm` still shells out to `yarn`.
+`vscode:prepublish` runs `build` before `vsce` reads `dist/` — see
+[04-operating.md](04-operating.md).
 
 ## Lint and type conventions
 
-`.eslintrc.json` runs `@typescript-eslint` against `src` with four rules at
-`warn` — `naming-convention`, `semi`, `curly`, `eqeqeq` — plus
-`no-throw-literal`, and ignores `out`, `dist` and `*.d.ts`
-(`.eslintrc.json:9-20`). Nothing is set to `error`: `yarn lint` reports a
-style drift, it does not fail the process by itself.
+The rulebook, the profile and every pass are the toolchain's; nothing is
+decided here. The two directives in `src/extension.ts` carry their reason on
+the line: the host's `EventEmitter` is not Node's, and firing `undefined`
+is the host's way of saying every decoration. There is no
+`oxlint.baseline.json`: the tree stands at zero.
 
 ## Adding a color slot
 

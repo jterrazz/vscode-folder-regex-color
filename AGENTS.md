@@ -18,18 +18,18 @@ The corpus is `docs/` + `README.md`, mapped by
 ## Setup
 
 ```bash
-yarn install
+make install
 ```
 
 ## Commands
 
-| Task                       | Command        |
-| -------------------------- | -------------- |
-| Compile once               | `yarn compile` |
-| Lint                       | `yarn lint`    |
-| Run the test suite         | `yarn test`    |
-| Package the `.vsix`        | `yarn vsix`    |
-| Publish to the Marketplace | `yarn publish` |
+| Task                       | Command           |
+| -------------------------- | ----------------- |
+| Build the bundle           | `make build`      |
+| Check everything           | `make lint`       |
+| Run the test suite         | `make test`       |
+| Package the `.vsix`        | `npm run vsix`    |
+| Publish to the Marketplace | `npm run publish` |
 
 `CLAUDE.md` at the root is a symlink to this file: one brief, two names, no
 second copy.
