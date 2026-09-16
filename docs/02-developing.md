@@ -22,25 +22,22 @@ or CI.
 | Compile once                | `yarn compile`           |
 | Compile and watch           | `yarn watch`             |
 | Lint                        | `yarn lint`               |
-| Compile the test sources    | `yarn compile-tests`     |
-| Run the compiled test suite | `yarn test`               |
+| Run the test suite          | `yarn test`               |
 | Build the production bundle | `yarn package`            |
 | Package the `.vsix`         | `yarn vsix`                |
 
 Compiling runs `webpack` against `webpack.config.js`, which uses `ts-loader`
 to read `src/**/*.ts` straight from TypeScript — there is no separate
-`tsc` build step for the extension code itself. `tsconfig.json` is used only
-for `compile-tests` (via `--outDir out`) and for the editor's own
-typechecking; `strict` is on (`tsconfig.json:9`).
+`tsc` build step for the extension code itself. `tsconfig.json` answers for the
+editor's own typechecking and for nothing else; `strict` is on
+(`tsconfig.json:9`).
 
-`package.json`'s own lifecycle hooks matter more than the script names
-suggest: `pretest` chains `compile-tests`, `compile` and `lint` before
-`test` runs, and `vscode:prepublish` runs `package` (the production
-webpack build) before `vsce` reads `dist/` — see
-[04-operating.md](04-operating.md). Both hooks are hardcoded to `yarn run`
-even though the repository also carries a `package-lock.json`
-(`package.json`, `scripts.pretest`, `scripts["vscode:prepublish"]`): running
-either lifecycle through `npm` still shells out to `yarn`.
+One lifecycle hook matters more than the script names suggest:
+`vscode:prepublish` runs `package` (the production webpack build) before
+`vsce` reads `dist/` — see [04-operating.md](04-operating.md). It is
+hardcoded to `yarn run` even though the repository also carries a
+`package-lock.json` (`package.json`, `scripts["vscode:prepublish"]`):
+running that lifecycle through `npm` still shells out to `yarn`.
 
 ## Lint and type conventions
 

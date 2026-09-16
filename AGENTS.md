@@ -12,7 +12,7 @@ The corpus is `docs/` + `README.md`, mapped by
 | --------------------------------------------------- | ------------------------- |
 | The provider, the contribution points, the bundle   | `docs/01-architecture.md` |
 | The toolchain, lint rules, adding a color slot      | `docs/02-developing.md`   |
-| The compiled Mocha suite, what it does not yet prove | `docs/03-testing.md`      |
+| What proves a change, and what nothing proves yet    | `docs/03-testing.md`      |
 | Packaging the `.vsix` and publishing it by hand     | `docs/04-operating.md`    |
 
 ## Setup
@@ -27,7 +27,7 @@ yarn install
 | ----------------------------- | ------------- |
 | Compile once                  | `yarn compile` |
 | Lint                           | `yarn lint`     |
-| Run the compiled test suite    | `yarn test`     |
+| Run the test suite             | `yarn test`     |
 | Package the `.vsix`            | `yarn vsix`     |
 | Publish to the Marketplace     | `yarn publish`  |
 
