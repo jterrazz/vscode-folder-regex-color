@@ -3,10 +3,10 @@
 Nothing mechanical proves `ColorDecorationProvider` today: the repository
 carries a test runner and no spec.
 
-| Question                               | Section                     |
-| --------------------------------------- | ---------------------------- |
-| What does `make test` run?              | The runner                   |
-| What is not proven, and what would prove it | What a first spec owes    |
+| Question                                    | Section                |
+| ------------------------------------------- | ---------------------- |
+| What does `make test` run?                  | The runner             |
+| What is not proven, and what would prove it | What a first spec owes |
 
 ## The runner
 

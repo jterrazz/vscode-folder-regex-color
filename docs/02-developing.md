@@ -3,11 +3,11 @@
 How a change to Folder Regex Color is made: the toolchain, the lint rules,
 and where a change to the color slots has to land twice.
 
-| Question                                | Section                    |
-| ---------------------------------------- | -------------------------- |
-| What do I run, and with what?            | The toolchain               |
-| What does the linter and compiler check? | Lint and type conventions   |
-| Where does a new color slot go?          | Adding a color slot         |
+| Question                                 | Section                        |
+| ---------------------------------------- | ------------------------------ |
+| What do I run, and with what?            | The toolchain                  |
+| What does the linter and compiler check? | Lint and type conventions      |
+| Where does a new color slot go?          | Adding a color slot            |
 | How is a change proven?                  | [03-testing.md](03-testing.md) |
 
 This repository does not use the `@jterrazz` toolchain: it is a standalone
@@ -17,14 +17,14 @@ or CI.
 
 ## The toolchain
 
-| Task                      | Command                |
-| -------------------------- | ----------------------- |
-| Compile once                | `yarn compile`           |
-| Compile and watch           | `yarn watch`             |
-| Lint                        | `yarn lint`               |
-| Run the test suite          | `yarn test`               |
-| Build the production bundle | `yarn package`            |
-| Package the `.vsix`         | `yarn vsix`                |
+| Task                        | Command        |
+| --------------------------- | -------------- |
+| Compile once                | `yarn compile` |
+| Compile and watch           | `yarn watch`   |
+| Lint                        | `yarn lint`    |
+| Run the test suite          | `yarn test`    |
+| Build the production bundle | `yarn package` |
+| Package the `.vsix`         | `yarn vsix`    |
 
 Compiling runs `webpack` against `webpack.config.js`, which uses `ts-loader`
 to read `src/**/*.ts` straight from TypeScript — there is no separate

@@ -4,11 +4,11 @@ Folder Regex Color is one file: a `vscode.FileDecorationProvider` that
 colors and symbol-tags a workspace path when it matches a user-configured
 regex, bundled by webpack into the single entry point VS Code loads.
 
-| Question                            | Section                    |
-| ------------------------------------ | -------------------------- |
-| What does the extension provide?     | The decoration provider    |
-| What can a user configure?           | The contribution points    |
-| What ships, and how does it load?    | The build                  |
+| Question                          | Section                 |
+| --------------------------------- | ----------------------- |
+| What does the extension provide?  | The decoration provider |
+| What can a user configure?        | The contribution points |
+| What ships, and how does it load? | The build               |
 
 ## The decoration provider
 

@@ -4,10 +4,10 @@ There is no CI in this repository (no `.github/` workflow): packaging and
 publishing to the Visual Studio Marketplace are both run by hand, from a
 developer's machine.
 
-| Question                         | Section              |
-| ---------------------------------- | --------------------- |
-| How is the `.vsix` built?          | Packaging             |
-| How does it reach the Marketplace? | Publishing            |
+| Question                           | Section                 |
+| ---------------------------------- | ----------------------- |
+| How is the `.vsix` built?          | Packaging               |
+| How does it reach the Marketplace? | Publishing              |
 | What does a user install?          | The Marketplace listing |
 
 ## Packaging

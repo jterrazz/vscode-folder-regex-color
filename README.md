@@ -1,4 +1,4 @@
-*Hey there – I’m Jean-Baptiste, just another developer doing weird things with code. All my projects live on [jterrazz.com](https://jterrazz.com) – complete with backstories and lessons learned. Feel free to poke around – you might just find something useful!*
+_Hey there – I’m Jean-Baptiste, just another developer doing weird things with code. All my projects live on [jterrazz.com](https://jterrazz.com) – complete with backstories and lessons learned. Feel free to poke around – you might just find something useful!_
 
 # Folder Regex Color (Folder Path Color with Regex format)
 
@@ -27,38 +27,28 @@ In the source control tab, custom colors on files won't be visible due to VS Cod
 
 ## Example Configuration
 
+The folders list maps a regex to one of five color slots:
+
 ```json
-// VS Code User Config
 "folder-regex-color.folders": [
-    {
-      "regex": ".*test.ts$",
-      "color": "custom1"
-    },
-    {
-      "regex": "src/app$",
-      "color": "custom2"
-    },
-    {
-      "regex": "src/components$",
-      "color": "custom3"
-    },
-    {
-      "regex": "src/lib$",
-      "color": "custom4"
-    },
-    {
-      "regex": "src/utils$",
-      "color": "custom5"
-    }
-  ],
-  "workbench.colorCustomizations": {
-    // Folder Regex Plugin
+    { "regex": ".*test.ts$", "color": "custom1" },
+    { "regex": "src/app$", "color": "custom2" },
+    { "regex": "src/components$", "color": "custom3" },
+    { "regex": "src/lib$", "color": "custom4" },
+    { "regex": "src/utils$", "color": "custom5" }
+]
+```
+
+Each slot takes its color from the workbench customizations:
+
+```json
+"workbench.colorCustomizations": {
     "folderRegexColor.custom1": "#31e2cd",
     "folderRegexColor.custom2": "#ff0000",
     "folderRegexColor.custom3": "#ffc23d",
     "folderRegexColor.custom4": "#8ee414",
     "folderRegexColor.custom5": "#FF88CC"
-  }
+}
 ```
 
 ## Requirements
