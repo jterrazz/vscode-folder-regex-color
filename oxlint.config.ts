@@ -1,3 +1,4 @@
-import { defineConfig, node } from '@jterrazz/typescript/oxlint';
+import { testing } from '@jterrazz/test/oxlint';
+import { compose, defineConfig, node } from '@jterrazz/typescript/oxlint';
 
-export default defineConfig(node);
+export default defineConfig(compose(node, testing));
