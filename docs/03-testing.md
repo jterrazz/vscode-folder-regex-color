@@ -23,6 +23,11 @@ asserted a fact about `Array.prototype.indexOf`. It exercised no line of
 `src/extension.ts`, and a headless CI cannot launch the editor it needs, so
 it cost a download and a second test framework to prove nothing.
 
+The run is not bare `vitest`: `vitest.config.mts` declares one project from
+`@jterrazz/test`'s `unit()` helper, which collects `**/*.test.ts` outside
+`specs/` and nothing else. The file is `.mts` because this package carries no
+`"type": "module"` and the helpers ship ESM only.
+
 ## What a first spec owes
 
 `ColorDecorationProvider` holds three behaviours that a spec can reach, and
@@ -35,6 +40,11 @@ none of them needs a running editor once the `vscode` module is stubbed
   normalizes backslashes, and returns the FIRST folder whose regex matches.
 - A `folder-regex-color.folders` change rebuilds the list and fires
   `onDidChangeFileDecorations`.
+
+It is a MODULE test, so it lands beside the module it names —
+`src/extension.test.ts`, sibling of `src/extension.ts`. The suffix is the
+declaration: `.spec.ts` is the word for a spec under `specs/<facet>/`, and the
+conventions checker refuses one anywhere else.
 
 Until one of those is written, a behavior change to `src/extension.ts` is
 verified by hand, in a real VS Code window launched by the `Run Extension`
