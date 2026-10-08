@@ -1,36 +1,27 @@
 import { EventEmitter, FileDecoration, ThemeColor, window, workspace } from 'vscode';
 import type { Event, FileDecorationProvider, ProviderResult, Uri } from 'vscode';
 
-const colorMap: Record<string, string> = {
+const SECTION = 'folder-regex-color';
+
+// invariant: as many slots as package.json's contributes.colors declares, folderRegexColor.custom1 to customN.
+const CUSTOM_SLOTS = 20;
+
+const THEME_COLORS: Record<string, string> = {
     blue: 'terminal.ansiBlue',
     magenta: 'terminal.ansiBrightMagenta',
     red: 'terminal.ansiBrightRed',
     cyan: 'terminal.ansiBrightCyan',
     green: 'terminal.ansiBrightGreen',
     yellow: 'terminal.ansiBrightYellow',
-    custom1: 'folderRegexColor.custom1',
-    custom2: 'folderRegexColor.custom2',
-    custom3: 'folderRegexColor.custom3',
-    custom4: 'folderRegexColor.custom4',
-    custom5: 'folderRegexColor.custom5',
-    custom6: 'folderRegexColor.custom6',
-    custom7: 'folderRegexColor.custom7',
-    custom8: 'folderRegexColor.custom8',
-    custom9: 'folderRegexColor.custom9',
-    custom10: 'folderRegexColor.custom10',
-    custom11: 'folderRegexColor.custom11',
-    custom12: 'folderRegexColor.custom12',
-    custom13: 'folderRegexColor.custom13',
-    custom14: 'folderRegexColor.custom14',
-    custom15: 'folderRegexColor.custom15',
-    custom16: 'folderRegexColor.custom16',
-    custom17: 'folderRegexColor.custom17',
-    custom18: 'folderRegexColor.custom18',
-    custom19: 'folderRegexColor.custom19',
-    custom20: 'folderRegexColor.custom20',
+    ...Object.fromEntries(
+        Array.from({ length: CUSTOM_SLOTS }, (_, index) => [
+            `custom${index + 1}`,
+            `folderRegexColor.custom${index + 1}`,
+        ]),
+    ),
 };
 
-const slots = Object.keys(colorMap);
+const SLOTS = Object.keys(THEME_COLORS);
 
 type FolderSetting = {
     regex: string;
@@ -43,44 +34,31 @@ type FolderRule = FolderSetting & { color: string };
 
 type DecorationChange = undefined | Uri | Uri[];
 
+function configuredFolders(): FolderRule[] {
+    const settings = workspace.getConfiguration(SECTION).get<FolderSetting[]>('folders', []);
+    const free = SLOTS.filter((slot) => !settings.some((folder) => folder.color === slot));
+
+    return settings.map((folder, index) => {
+        const slot = index % SLOTS.length;
+        // Stryker disable next-line StringLiteral: dead guard of noUncheckedIndexedAccess, slot is always an index of SLOTS
+        return { ...folder, color: folder.color ?? free[slot] ?? SLOTS[slot] ?? '' };
+    });
+}
+
 class ColorDecorationProvider implements FileDecorationProvider {
     private readonly decorationsChanged = new EventEmitter<DecorationChange>();
 
     readonly onDidChangeFileDecorations: Event<DecorationChange> = this.decorationsChanged.event;
 
-    private folders: FolderRule[] = [];
+    private folders = configuredFolders();
 
     constructor() {
         workspace.onDidChangeConfiguration((event) => {
-            if (event.affectsConfiguration('folder-regex-color.folders')) {
-                this.constructFolders();
+            if (event.affectsConfiguration(`${SECTION}.folders`)) {
+                this.folders = configuredFolders();
                 // oxlint-disable-next-line unicorn/no-useless-undefined -- the emitter's parameter is mandatory, and undefined means every decoration
                 this.decorationsChanged.fire(undefined);
             }
-        });
-        this.constructFolders();
-    }
-
-    constructFolders(): void {
-        const settings = workspace
-            .getConfiguration('folder-regex-color')
-            .get<FolderSetting[]>('folders', []);
-        const free = slots.filter((slot) => !settings.some((folder) => folder.color === slot));
-        let next = 0;
-        this.folders = settings.map((folder) => {
-            if (next >= slots.length) {
-                next = 0;
-            }
-            const color = folder.color ?? free[next] ?? slots[next] ?? slots[0] ?? '';
-            next += 1;
-            const rule: FolderRule = { color, regex: folder.regex };
-            if (folder.symbol !== undefined) {
-                rule.symbol = folder.symbol;
-            }
-            if (folder.tooltip !== undefined) {
-                rule.tooltip = folder.tooltip;
-            }
-            return rule;
         });
     }
 
@@ -98,7 +76,7 @@ class ColorDecorationProvider implements FileDecorationProvider {
         return new FileDecoration(
             match.symbol,
             match.tooltip,
-            new ThemeColor(colorMap[match.color] ?? match.color),
+            new ThemeColor(THEME_COLORS[match.color] ?? match.color),
         );
     }
 }

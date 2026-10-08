@@ -22,4 +22,4 @@ A folder with no color takes a slot by its position in the list: the slot at tha
 
 ## The contribution points
 
-`package.json`'s `contributes` declares what VS Code reads before the extension runs: the `folder-regex-color.folders` setting (an array of objects with `regex`, `color`, `symbol` and `tooltip`) and the twenty `folderRegexColor.customN` theme colors. The module's color map lists the same twenty slots, a second owner of them: nothing mechanical keeps the two in step ([Develop](../guides/develop.md#adding-a-color-slot)).
+`package.json`'s `contributes` declares what VS Code reads before the extension runs: the `folder-regex-color.folders` setting (an array of objects with `regex`, `color`, `symbol` and `tooltip`) and the twenty `folderRegexColor.customN` theme colors. The module's `CUSTOM_SLOTS` must equal the number of contributed colors: a spec resolves every slot and fails on a color the manifest does not contribute ([Test](../guides/test.md)).

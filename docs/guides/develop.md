@@ -17,7 +17,7 @@ The repository is a consumer of `@jterrazz/typescript` and `@jterrazz/test`, and
 | Run the specs                  | `make test`    |
 | The whole gate, mutation last  | `make check`   |
 
-`make test` and `make mutation` build first, so what they run is `dist/index.cjs`, the file VS Code loads.
+`make test` and `make mutation` build first: the specs load `dist/index.cjs`, the file VS Code loads.
 
 ## The build
 
@@ -30,6 +30,6 @@ To try a change in a real editor, open the repository in VS Code and run the `Ru
 A `customN` slot is declared in two places that move together:
 
 1. `package.json`'s `contributes.colors` — a `folderRegexColor.customN` entry with `dark` and `light` defaults.
-2. `colorMap` in `src/index.ts` — a `customN` key pointing at that same `folderRegexColor.customN` id.
+2. `CUSTOM_SLOTS` in `src/index.ts`, the number of slots.
 
-The README's table of defaults lists them for users. Nothing mechanical checks the two stay in step: a slot added to `package.json` with no `colorMap` entry is handed to the theme as the bare name `customN`, which no theme defines.
+The README's table of defaults lists them for users. The `named-colors` scenario of the colors spec names one slot past the last; move it with the count, and the spec then fails on any slot the manifest does not contribute.

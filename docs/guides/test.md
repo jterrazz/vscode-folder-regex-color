@@ -18,7 +18,7 @@ The specs load `dist/`, so a change to `src/` is seen only once built: `make tes
 
 ## Mutation
 
-`make mutation` (the last step of `make check`) runs `typescript mutation`: Stryker instruments `src/index.ts` in a sandbox, builds it, and runs the specs, each spawned `node` reporting the mutants it ran. It measures the change not yet committed, or the last commit on a clean tree.
+`make mutation` (the last step of `make check`) runs `typescript mutation`: Stryker instruments `src/index.ts` in a sandbox, builds it, and runs the specs, each spawned `node` reporting the mutants it ran. It measures the change not yet committed, or the last commit on a clean tree. One mutant is declared, on its line: the empty-string fallback of a slot lookup that cannot miss.
 
 ## What no spec proves
 
