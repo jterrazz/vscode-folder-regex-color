@@ -1,5 +1,5 @@
 import { EventEmitter, FileDecoration, ThemeColor, window, workspace } from 'vscode';
-import type { Event, ExtensionContext, FileDecorationProvider, ProviderResult, Uri } from 'vscode';
+import type { Event, FileDecorationProvider, ProviderResult, Uri } from 'vscode';
 
 const colorMap: Record<string, string> = {
     blue: 'terminal.ansiBlue',
@@ -44,7 +44,6 @@ type FolderRule = FolderSetting & { color: string };
 type DecorationChange = undefined | Uri | Uri[];
 
 class ColorDecorationProvider implements FileDecorationProvider {
-    // oxlint-disable-next-line unicorn/prefer-event-target -- this is VS Code's EventEmitter, the host's event contract, not Node's
     private readonly decorationsChanged = new EventEmitter<DecorationChange>();
 
     readonly onDidChangeFileDecorations: Event<DecorationChange> = this.decorationsChanged.event;
@@ -104,7 +103,8 @@ class ColorDecorationProvider implements FileDecorationProvider {
     }
 }
 
-export function activate(context: ExtensionContext): void {
+// hazard: the published declarations cannot name a type of the ambient `vscode` module — the build's dts step fails on @types/vscode — so the host's ExtensionContext is met by the one member read.
+export function activate(context: { subscriptions: { dispose: () => unknown }[] }): void {
     context.subscriptions.push(
         window.registerFileDecorationProvider(new ColorDecorationProvider()),
     );

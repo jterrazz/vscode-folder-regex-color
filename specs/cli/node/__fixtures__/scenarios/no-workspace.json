@@ -1,0 +1,13 @@
+{
+    "settings": {
+        "folder-regex-color.folders": [
+            {
+                "regex": ".*",
+                "color": "red"
+            }
+        ]
+    },
+    "paths": [
+        "/work/shop/src"
+    ]
+}

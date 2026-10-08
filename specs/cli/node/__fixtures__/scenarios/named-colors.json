@@ -1,0 +1,151 @@
+{
+    "workspaceFolders": [
+        "/work/shop"
+    ],
+    "settings": {
+        "folder-regex-color.folders": [
+            {
+                "regex": "^/blue$",
+                "color": "blue"
+            },
+            {
+                "regex": "^/magenta$",
+                "color": "magenta"
+            },
+            {
+                "regex": "^/red$",
+                "color": "red"
+            },
+            {
+                "regex": "^/cyan$",
+                "color": "cyan"
+            },
+            {
+                "regex": "^/green$",
+                "color": "green"
+            },
+            {
+                "regex": "^/yellow$",
+                "color": "yellow"
+            },
+            {
+                "regex": "^/custom1$",
+                "color": "custom1"
+            },
+            {
+                "regex": "^/custom2$",
+                "color": "custom2"
+            },
+            {
+                "regex": "^/custom3$",
+                "color": "custom3"
+            },
+            {
+                "regex": "^/custom4$",
+                "color": "custom4"
+            },
+            {
+                "regex": "^/custom5$",
+                "color": "custom5"
+            },
+            {
+                "regex": "^/custom6$",
+                "color": "custom6"
+            },
+            {
+                "regex": "^/custom7$",
+                "color": "custom7"
+            },
+            {
+                "regex": "^/custom8$",
+                "color": "custom8"
+            },
+            {
+                "regex": "^/custom9$",
+                "color": "custom9"
+            },
+            {
+                "regex": "^/custom10$",
+                "color": "custom10"
+            },
+            {
+                "regex": "^/custom11$",
+                "color": "custom11"
+            },
+            {
+                "regex": "^/custom12$",
+                "color": "custom12"
+            },
+            {
+                "regex": "^/custom13$",
+                "color": "custom13"
+            },
+            {
+                "regex": "^/custom14$",
+                "color": "custom14"
+            },
+            {
+                "regex": "^/custom15$",
+                "color": "custom15"
+            },
+            {
+                "regex": "^/custom16$",
+                "color": "custom16"
+            },
+            {
+                "regex": "^/custom17$",
+                "color": "custom17"
+            },
+            {
+                "regex": "^/custom18$",
+                "color": "custom18"
+            },
+            {
+                "regex": "^/custom19$",
+                "color": "custom19"
+            },
+            {
+                "regex": "^/custom20$",
+                "color": "custom20"
+            },
+            {
+                "regex": "^/custom21$",
+                "color": "custom21"
+            },
+            {
+                "regex": "^/charts.red$",
+                "color": "charts.red"
+            }
+        ]
+    },
+    "paths": [
+        "/work/shop/blue",
+        "/work/shop/magenta",
+        "/work/shop/red",
+        "/work/shop/cyan",
+        "/work/shop/green",
+        "/work/shop/yellow",
+        "/work/shop/custom1",
+        "/work/shop/custom2",
+        "/work/shop/custom3",
+        "/work/shop/custom4",
+        "/work/shop/custom5",
+        "/work/shop/custom6",
+        "/work/shop/custom7",
+        "/work/shop/custom8",
+        "/work/shop/custom9",
+        "/work/shop/custom10",
+        "/work/shop/custom11",
+        "/work/shop/custom12",
+        "/work/shop/custom13",
+        "/work/shop/custom14",
+        "/work/shop/custom15",
+        "/work/shop/custom16",
+        "/work/shop/custom17",
+        "/work/shop/custom18",
+        "/work/shop/custom19",
+        "/work/shop/custom20",
+        "/work/shop/custom21",
+        "/work/shop/charts.red"
+    ]
+}

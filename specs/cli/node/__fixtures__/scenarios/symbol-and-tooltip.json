@@ -1,0 +1,26 @@
+{
+    "workspaceFolders": [
+        "/work/shop"
+    ],
+    "settings": {
+        "folder-regex-color.folders": [
+            {
+                "regex": "^/frontend",
+                "symbol": "⚛️",
+                "tooltip": "Frontend Source",
+                "color": "custom1"
+            },
+            {
+                "regex": "^/packages/common$",
+                "color": "blue"
+            }
+        ]
+    },
+    "paths": [
+        "/work/shop/frontend",
+        "/work/shop/frontend/app.ts",
+        "/work/shop/packages/common",
+        "/work/shop/packages/common/index.ts",
+        "/work/shop/backend"
+    ]
+}

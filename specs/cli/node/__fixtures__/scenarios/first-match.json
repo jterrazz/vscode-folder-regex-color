@@ -1,0 +1,31 @@
+{
+    "workspaceFolders": [
+        "/work/api",
+        "/work/web"
+    ],
+    "settings": {
+        "folder-regex-color.folders": [
+            {
+                "regex": "^/src$",
+                "color": "red"
+            },
+            {
+                "regex": "src",
+                "color": "green"
+            },
+            {
+                "regex": "^/docs/\\p{Lu}",
+                "color": "cyan"
+            }
+        ]
+    },
+    "paths": [
+        "/work/web/src",
+        "/work/api\\src",
+        "/work/api/lib/src",
+        "/elsewhere/src",
+        "/work/web/docs/Ünits",
+        "/work/web/docs/units",
+        "/work/web/README.md"
+    ]
+}

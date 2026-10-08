@@ -1,0 +1,120 @@
+{
+    "workspaceFolders": [
+        "/work/shop"
+    ],
+    "settings": {
+        "folder-regex-color.folders": [
+            {
+                "regex": "^/f0$",
+                "color": "blue"
+            },
+            {
+                "regex": "^/f1$"
+            },
+            {
+                "regex": "^/f2$"
+            },
+            {
+                "regex": "^/f3$"
+            },
+            {
+                "regex": "^/f4$"
+            },
+            {
+                "regex": "^/f5$"
+            },
+            {
+                "regex": "^/f6$"
+            },
+            {
+                "regex": "^/f7$"
+            },
+            {
+                "regex": "^/f8$"
+            },
+            {
+                "regex": "^/f9$"
+            },
+            {
+                "regex": "^/f10$"
+            },
+            {
+                "regex": "^/f11$"
+            },
+            {
+                "regex": "^/f12$"
+            },
+            {
+                "regex": "^/f13$"
+            },
+            {
+                "regex": "^/f14$"
+            },
+            {
+                "regex": "^/f15$"
+            },
+            {
+                "regex": "^/f16$"
+            },
+            {
+                "regex": "^/f17$"
+            },
+            {
+                "regex": "^/f18$"
+            },
+            {
+                "regex": "^/f19$"
+            },
+            {
+                "regex": "^/f20$"
+            },
+            {
+                "regex": "^/f21$"
+            },
+            {
+                "regex": "^/f22$"
+            },
+            {
+                "regex": "^/f23$"
+            },
+            {
+                "regex": "^/f24$"
+            },
+            {
+                "regex": "^/f25$"
+            },
+            {
+                "regex": "^/f26$"
+            }
+        ]
+    },
+    "paths": [
+        "/work/shop/f0",
+        "/work/shop/f1",
+        "/work/shop/f2",
+        "/work/shop/f3",
+        "/work/shop/f4",
+        "/work/shop/f5",
+        "/work/shop/f6",
+        "/work/shop/f7",
+        "/work/shop/f8",
+        "/work/shop/f9",
+        "/work/shop/f10",
+        "/work/shop/f11",
+        "/work/shop/f12",
+        "/work/shop/f13",
+        "/work/shop/f14",
+        "/work/shop/f15",
+        "/work/shop/f16",
+        "/work/shop/f17",
+        "/work/shop/f18",
+        "/work/shop/f19",
+        "/work/shop/f20",
+        "/work/shop/f21",
+        "/work/shop/f22",
+        "/work/shop/f23",
+        "/work/shop/f24",
+        "/work/shop/f25",
+        "/work/shop/f26"
+    ]
+}

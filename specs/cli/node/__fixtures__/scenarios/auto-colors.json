@@ -1,0 +1,24 @@
+{
+    "workspaceFolders": [
+        "/work/shop"
+    ],
+    "settings": {
+        "folder-regex-color.folders": [
+            {
+                "regex": "^/a$"
+            },
+            {
+                "regex": "^/b$",
+                "color": "blue"
+            },
+            {
+                "regex": "^/c$"
+            }
+        ]
+    },
+    "paths": [
+        "/work/shop/a",
+        "/work/shop/b",
+        "/work/shop/c"
+    ]
+}

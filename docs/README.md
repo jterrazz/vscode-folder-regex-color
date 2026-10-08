@@ -1,15 +1,21 @@
-# Folder Regex Color — the corpus
+# Folder Regex Color — the manual
 
-The manual of this repository: what the extension is, and how it is
-changed, proven and released. The vitrine is the root `README.md`.
+A VS Code extension that colors and symbol-tags the paths of a workspace whose path matches a regex. What it does for a user, and its settings, are the repository's README; this page lists every page of the manual, by what the reader came to do.
 
-| Chapter                                  | Holds                                                                             |
-| ---------------------------------------- | --------------------------------------------------------------------------------- |
-| [01-architecture.md](01-architecture.md) | The decoration provider, the contribution points, and how the webpack build loads |
-| [02-developing.md](02-developing.md)     | The toolchain, the lint rules, and where a new color slot has to land twice       |
-| [03-testing.md](03-testing.md)           | The runner, what nothing proves yet, and what a first spec owes                   |
-| [04-operating.md](04-operating.md)       | The shared CI, then packaging the `.vsix` and publishing it by hand               |
+## Guides
 
-A decision this repository takes on its own stands in
-[decisions/](decisions/), numbered and chronological, the mold
-`_template.md` beside them.
+| Page                         | Answers                                                                                |
+| ---------------------------- | -------------------------------------------------------------------------------------- |
+| [Develop](guides/develop.md) | Changing the extension: the declaration, the gestures, the build, adding a color slot  |
+| [Test](guides/test.md)       | Proving a change: the specs that load the built extension into a host double, mutation |
+| [Release](guides/release.md) | Packaging the `.vsix` and publishing it to the Marketplace by hand                     |
+
+## Concepts
+
+| Page                                     | Answers                                                                  |
+| ---------------------------------------- | ------------------------------------------------------------------------ |
+| [Architecture](concepts/architecture.md) | The decoration provider, how a folder gets its color, what VS Code loads |
+
+## Decisions
+
+The records of decisions this repository alone took are in [`decisions/`](decisions/), numbered in the order they were taken, the mold `_template.md` beside them.

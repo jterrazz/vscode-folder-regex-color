@@ -1,4 +1,3 @@
-import { testing } from '@jterrazz/test/oxlint';
-import { compose, defineConfig, node } from '@jterrazz/typescript/oxlint';
+import { oxlintConfig } from '@jterrazz/typescript/oxlint';
 
-export default defineConfig(compose(node, testing));
+export default await oxlintConfig(import.meta.url);

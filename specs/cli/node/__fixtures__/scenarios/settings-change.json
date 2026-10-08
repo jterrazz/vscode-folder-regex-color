@@ -1,0 +1,37 @@
+{
+    "workspaceFolders": [
+        "/work/shop"
+    ],
+    "settings": {
+        "folder-regex-color.folders": [
+            {
+                "regex": "^/src$",
+                "color": "red"
+            }
+        ]
+    },
+    "paths": [
+        "/work/shop/src"
+    ],
+    "changes": [
+        {
+            "settings": {
+                "folder-regex-color.folders": [
+                    {
+                        "regex": "^/src$",
+                        "color": "green"
+                    }
+                ]
+            },
+            "affects": [
+                "editor.fontSize"
+            ]
+        },
+        {
+            "settings": {},
+            "affects": [
+                "folder-regex-color.folders"
+            ]
+        }
+    ]
+}

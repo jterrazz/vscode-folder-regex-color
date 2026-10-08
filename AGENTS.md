@@ -1,19 +1,17 @@
 # Agent brief — Folder Regex Color
 
-A VS Code extension that colors and symbol-tags folders by regex. This file
-**routes**; it does not restate what the corpus already says.
+A VS Code extension that colors and symbol-tags folders by regex. This file **routes**; it does not restate what the manual says.
 
-## Where knowledge lives (route here first)
+## Where knowledge lives
 
-The corpus is `docs/` + `README.md`, mapped by
-[docs/README.md](docs/README.md). Do not duplicate it — link to it.
+The manual is `docs/`, mapped by [docs/README.md](docs/README.md); the user-facing description and settings are the root `README.md`.
 
-| Working on…                                       | Read                      |
-| ------------------------------------------------- | ------------------------- |
-| The provider, the contribution points, the bundle | `docs/01-architecture.md` |
-| The toolchain, lint rules, adding a color slot    | `docs/02-developing.md`   |
-| What proves a change, and what nothing proves yet | `docs/03-testing.md`      |
-| Packaging the `.vsix` and publishing it by hand   | `docs/04-operating.md`    |
+| Working on…                                       | Read                                                           |
+| ------------------------------------------------- | -------------------------------------------------------------- |
+| The provider, how a folder gets its color, `main` | [docs/concepts/architecture.md](docs/concepts/architecture.md) |
+| The declaration, the gestures, the build, a slot  | [docs/guides/develop.md](docs/guides/develop.md)               |
+| What proves a change: the host double, mutation   | [docs/guides/test.md](docs/guides/test.md)                     |
+| Packaging the `.vsix` and publishing it           | [docs/guides/release.md](docs/guides/release.md)               |
 
 ## Setup
 
@@ -25,11 +23,11 @@ make install
 
 | Task                       | Command           |
 | -------------------------- | ----------------- |
-| Build the bundle           | `make build`      |
-| Check everything           | `make lint`       |
-| Run the test suite         | `make test`       |
+| Build `dist/`              | `make build`      |
+| Check everything           | `make check`      |
+| Repair what a fixer can    | `make fix`        |
+| Run the specs              | `make test`       |
 | Package the `.vsix`        | `npm run vsix`    |
 | Publish to the Marketplace | `npm run publish` |
 
-`CLAUDE.md` at the root is a symlink to this file: one brief, two names, no
-second copy.
+`CLAUDE.md` at the root is a symlink to this file: one brief, two names, no second copy.

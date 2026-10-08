@@ -1,4 +1,3 @@
-import { oxfmt } from '@jterrazz/typescript';
-import { defineConfig } from '@jterrazz/typescript/oxfmt';
+import { oxfmtConfig } from '@jterrazz/typescript/oxfmt';
 
-export default defineConfig(oxfmt);
+export default await oxfmtConfig(import.meta.url);

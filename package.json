@@ -12,28 +12,24 @@
         "url": "https://github.com/jterrazz/vscode-folder-regex-color"
     },
     "publisher": "Jterrazz",
-    "main": "./dist/extension.js",
+    "type": "module",
+    "main": "./dist/index.cjs",
     "scripts": {
         "vscode:prepublish": "npm run build",
-        "build": "webpack --mode production --devtool hidden-source-map",
-        "compile": "webpack",
-        "watch": "webpack --watch",
+        "build": "typescript build",
         "lint": "typescript check",
         "lint:fix": "typescript fix",
-        "test": "vitest --run --passWithNoTests",
+        "test": "vitest --run",
         "vsix": "vsce package",
         "publish": "vsce publish"
     },
     "devDependencies": {
-        "@jterrazz/test": "^16.1.0",
-        "@jterrazz/typescript": "^10.3.1",
+        "@jterrazz/test": "file:../package-test",
+        "@jterrazz/typescript": "file:../package-typescript",
         "@types/node": "^24.0.0",
         "@types/vscode": "^1.78.0",
         "@vscode/vsce": "^3.2.1",
-        "ts-loader": "^9.4.3",
-        "vitest": "^5.0.1",
-        "webpack": "^5.85.0",
-        "webpack-cli": "^5.1.1"
+        "vitest": "^5.0.1"
     },
     "contributes": {
         "configuration": {
