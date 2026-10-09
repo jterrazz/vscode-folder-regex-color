@@ -27,7 +27,7 @@ In the source control tab, custom colors on files won't be visible due to VS Cod
 
 ## Example Configuration
 
-The folders list maps a regex to one of five color slots:
+Each entry of the folders list maps a regex to a color name: one of the six terminal colors (`blue`, `magenta`, `red`, `cyan`, `green`, `yellow`), one of the custom slots `custom1` to `custom20`, or any theme color id such as `charts.red`. An entry with no color is given one automatically. Here, five entries use five custom slots:
 
 ```json
 "folder-regex-color.folders": [
