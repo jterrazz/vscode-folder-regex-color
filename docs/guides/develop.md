@@ -1,6 +1,6 @@
 # Develop
 
-How a change to Folder Regex Color is made: the declaration, the gestures, the build, and the one change that lands in two places.
+How a change to Folder Regex Color is made: the declaration, the gestures, the build, and adding a color slot.
 
 ## The declaration
 
@@ -27,9 +27,4 @@ To try a change in a real editor, open the repository in VS Code and run the `Ru
 
 ## Adding a color slot
 
-A `customN` slot is declared in two places that move together:
-
-1. `package.json`'s `contributes.colors` — a `folderRegexColor.customN` entry with `dark` and `light` defaults.
-2. `CUSTOM_SLOTS` in `src/index.ts`, the number of slots.
-
-The README's table of defaults lists them for users. The `named-colors` scenario of the colors spec names one slot past the last; move it with the count, and the spec then fails on any slot the manifest does not contribute.
+A `customN` slot is a `folderRegexColor.customN` entry in `package.json`'s `contributes.colors`, with `dark` and `light` defaults: the module imports the manifest at build time and makes a slot of each contributed color, so nothing in `src/` moves. The README's table of defaults lists them for users, and the `named-colors` scenario of the colors spec names one slot past the last; both move with the manifest.

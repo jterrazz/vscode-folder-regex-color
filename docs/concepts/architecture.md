@@ -16,10 +16,10 @@ For each path VS Code asks about, the provider strips the path of a workspace fo
 
 ## How a folder gets its color
 
-A color is a name: one of six terminal colors (`blue`, `magenta`, `red`, `cyan`, `green`, `yellow`), each standing for a `terminal.ansi*` theme color, or one of twenty slots `custom1` to `custom20`, each standing for the theme color `folderRegexColor.customN` that `package.json` contributes with its dark and light defaults. Any other name is handed to the theme as it is, so a theme color id such as `charts.red` works too.
+A color is a name: one of six terminal colors (`blue`, `magenta`, `red`, `cyan`, `green`, `yellow`), each standing for a `terminal.ansi*` theme color, or a slot `customN`, one for each theme color `folderRegexColor.customN` that `package.json` contributes — twenty today, `custom1` to `custom20` — with its dark and light defaults. Any other name is handed to the theme as it is, so a theme color id such as `charts.red` works too.
 
 A folder with no color takes a slot by its position in the list: the slot at that position among those no folder names. A named folder uses up a position as well, so a free slot can be skipped; past the last free slot a folder takes the slot at its position among all twenty-six, and past the twenty-sixth the count starts again.
 
 ## The contribution points
 
-`package.json`'s `contributes` declares what VS Code reads before the extension runs: the `folder-regex-color.folders` setting (an array of objects with `regex`, `color`, `symbol` and `tooltip`) and the twenty `folderRegexColor.customN` theme colors. The module's `CUSTOM_SLOTS` must equal the number of contributed colors: a spec resolves every slot and fails on a color the manifest does not contribute ([Test](../guides/test.md)).
+`package.json`'s `contributes` declares what VS Code reads before the extension runs: the `folder-regex-color.folders` setting (an array of objects with `regex`, `color`, `symbol` and `tooltip`) and the twenty `folderRegexColor.customN` theme colors. The module imports the manifest and makes a slot of each contributed color, `folderRegexColor.customN` named `customN`, so the build carries the list and the manifest is its one owner.

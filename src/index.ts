@@ -1,10 +1,9 @@
 import { EventEmitter, FileDecoration, ThemeColor, window, workspace } from 'vscode';
 import type { Event, FileDecorationProvider, ProviderResult, Uri } from 'vscode';
 
-const SECTION = 'folder-regex-color';
+import manifest from '../package.json' with { type: 'json' };
 
-// invariant: as many slots as package.json's contributes.colors declares, folderRegexColor.custom1 to customN.
-const CUSTOM_SLOTS = 20;
+const SECTION = 'folder-regex-color';
 
 const THEME_COLORS: Record<string, string> = {
     blue: 'terminal.ansiBlue',
@@ -14,10 +13,7 @@ const THEME_COLORS: Record<string, string> = {
     green: 'terminal.ansiBrightGreen',
     yellow: 'terminal.ansiBrightYellow',
     ...Object.fromEntries(
-        Array.from({ length: CUSTOM_SLOTS }, (_, index) => [
-            `custom${index + 1}`,
-            `folderRegexColor.custom${index + 1}`,
-        ]),
+        manifest.contributes.colors.map(({ id }) => [id.replace('folderRegexColor.', ''), id]),
     ),
 };
 

@@ -16,7 +16,6 @@ const vscode = require('./vscode.cjs');
 const scenario = JSON.parse(readFileSync(process.argv[2], 'utf8'));
 const root = process.env.EXTENSION_ROOT;
 const manifest = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'));
-const contributed = new Set(manifest.contributes.colors.map((color) => color.id));
 
 vscode.state.settings = scenario.settings ?? {};
 vscode.state.workspaceFolders = scenario.workspaceFolders?.map((path) => ({ uri: { path } }));
@@ -30,11 +29,6 @@ const [provider] = vscode.state.providers;
 const fired = [];
 provider.onDidChangeFileDecorations((change) => fired.push(change));
 
-function colorOf(color) {
-    const declared = !color.id.startsWith('folderRegexColor.') || contributed.has(color.id);
-    return declared ? color.id : `${color.id} (not contributed)`;
-}
-
 function printDecorations() {
     for (const path of scenario.paths) {
         const decoration = provider.provideFileDecoration({ path });
@@ -42,7 +36,7 @@ function printDecorations() {
             console.log(`${path}  none`);
             continue;
         }
-        const parts = [`color=${colorOf(decoration.color)}`];
+        const parts = [`color=${decoration.color.id}`];
         if (decoration.badge !== undefined) parts.push(`badge=${decoration.badge}`);
         if (decoration.tooltip !== undefined) parts.push(`tooltip=${decoration.tooltip}`);
         console.log(`${path}  ${parts.join(' ')}`);

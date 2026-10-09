@@ -4,7 +4,7 @@ What proves a change to Folder Regex Color: the specs under `specs/cli/node/`, w
 
 ## The specs
 
-Each spec runs `node host.mjs <scenario>.json` in a fresh directory through `@jterrazz/test`'s cli runner (`specs/cli/cli.specification.ts`). `specs/cli/node/__fixtures__/host/` is the host double: `vscode.cjs` is the `vscode` module reduced to what the extension reads — the configuration, the workspace folders, the event emitter, the decoration and theme color classes —, and `host.mjs` resolves `vscode` to it, reads the manifest at `EXTENSION_ROOT` (the checkout), `require`s its `main` as the extension host does, calls `activate`, and prints the decoration of each path the scenario lists, then again after each settings change it reports. A color id of the `folderRegexColor.` family the manifest does not contribute prints `(not contributed)`.
+Each spec runs `node host.mjs <scenario>.json` in a fresh directory through `@jterrazz/test`'s cli runner (`specs/cli/cli.specification.ts`). `specs/cli/node/__fixtures__/host/` is the host double: `vscode.cjs` is the `vscode` module reduced to what the extension reads — the configuration, the workspace folders, the event emitter, the decoration and theme color classes —, and `host.mjs` resolves `vscode` to it, reads the manifest at `EXTENSION_ROOT` (the checkout), `require`s its `main` as the extension host does, calls `activate`, and prints the decoration of each path the scenario lists, then again after each settings change it reports.
 
 The scenarios, in `specs/cli/node/__fixtures__/scenarios/`, hold the workspace folders, the settings and the paths; each test compares the whole output, written in place.
 
