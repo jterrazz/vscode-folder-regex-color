@@ -8,13 +8,11 @@ const state = {
 
 class EventEmitter {
     #listeners = [];
-    fired = [];
     event = (listener) => {
         this.#listeners.push(listener);
         return { dispose() {} };
     };
     fire(data) {
-        this.fired.push(data);
         for (const listener of this.#listeners) listener(data);
     }
 }
@@ -54,7 +52,7 @@ const workspace = {
 const window = {
     registerFileDecorationProvider(provider) {
         state.providers.push(provider);
-        return { dispose() {}, provider };
+        return { dispose() {} };
     },
 };
 
