@@ -52,7 +52,6 @@ class ColorDecorationProvider implements FileDecorationProvider {
         workspace.onDidChangeConfiguration((event) => {
             if (event.affectsConfiguration(`${SECTION}.folders`)) {
                 this.folders = configuredFolders();
-                // oxlint-disable-next-line unicorn/no-useless-undefined -- the emitter's parameter is mandatory, and undefined means every decoration
                 this.decorationsChanged.fire(undefined);
             }
         });
