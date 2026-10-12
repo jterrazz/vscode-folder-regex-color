@@ -227,9 +227,5 @@
     "icon": "/images/logo.png",
     "engines": {
         "vscode": "^1.78.0"
-    },
-    "originalAuthor": {
-        "name": "Zain Chen",
-        "url": "https://github.com/zainchen/vscode-folder-path-color"
     }
 }

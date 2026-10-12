@@ -2,7 +2,7 @@
 
 _Hey there – I’m Jean-Baptiste, just another developer doing weird things with code. All my projects live on [jterrazz.com](https://jterrazz.com) – complete with backstories and lessons learned. Feel free to poke around – you might just find something useful!_
 
-> Fork of [Folder Path Color](https://marketplace.visualstudio.com/items?itemName=VisbyDev.folder-path-color), but with regex paths
+> Fork of [Folder Path Color](https://marketplace.visualstudio.com/items?itemName=VisbyDev.folder-path-color), but with regex paths. Original work by [Zain Chen](https://github.com/zainchen/vscode-folder-path-color).
 
 This extension allows you to color-code folders and files in Visual Studio Code by specifying paths regex and colors in your workspace settings. The colors are visible in the Explorer view and in the tabs, unless overridden by the app.
 
