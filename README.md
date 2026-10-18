@@ -1,6 +1,6 @@
 # Folder Regex Color (Folder Path Color with Regex format)
 
-_Hey there – I’m Jean-Baptiste, just another developer doing weird things with code. All my projects live on [jterrazz.com](https://jterrazz.com) – complete with backstories and lessons learned. Feel free to poke around – you might just find something useful!_
+_Hey there, I'm Jean-Baptiste, just another developer doing weird things with code. All my projects live on [jterrazz.com](https://jterrazz.com), complete with backstories and lessons learned. Feel free to poke around: you might just find something useful!_
 
 > Fork of [Folder Path Color](https://marketplace.visualstudio.com/items?itemName=VisbyDev.folder-path-color), but with regex paths. Original work by [Zain Chen](https://github.com/zainchen/vscode-folder-path-color).
 

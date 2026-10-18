@@ -1,6 +1,6 @@
 # Architecture
 
-Folder Regex Color is one module, `src/index.ts`: a `FileDecorationProvider` that VS Code asks about every path it draws — in the Explorer, the tabs, search — and that answers with a color, a badge and a tooltip when the path matches a folder the user configured.
+Folder Regex Color is one module, `src/index.ts`: a `FileDecorationProvider` that VS Code asks about every path it draws (in the Explorer, the tabs, search) and that answers with a color, a badge and a tooltip when the path matches a folder the user configured.
 
 ## What VS Code loads
 
@@ -10,13 +10,13 @@ Folder Regex Color is one module, `src/index.ts`: a `FileDecorationProvider` tha
 
 ## The decoration provider
 
-The provider reads the `folder-regex-color.folders` setting into a list of folders — a regex, a color, an optional symbol and tooltip — when it is created, and again each time VS Code reports that setting changed; it then tells VS Code every decoration is stale (`onDidChangeFileDecorations` fired with `undefined`). A change of any other setting reads nothing.
+The provider reads the `folder-regex-color.folders` setting into a list of folders (a regex, a color, an optional symbol and tooltip) when it is created, and again each time VS Code reports that setting changed; it then tells VS Code every decoration is stale (`onDidChangeFileDecorations` fired with `undefined`). A change of any other setting reads nothing.
 
 For each path VS Code asks about, the provider strips the path of a workspace folder's own path, turns backslashes into slashes, and tests each folder's regex against what remains, with the `u` flag. The first folder whose regex matches, from any workspace folder, decorates the path; none matching, or no workspace folder open, leaves it undecorated. A path outside every workspace folder is tested whole.
 
 ## How a folder gets its color
 
-A color is a name: one of six terminal colors (`blue`, `magenta`, `red`, `cyan`, `green`, `yellow`), each standing for a `terminal.ansi*` theme color, or a slot `customN`, one for each theme color `folderRegexColor.customN` that `package.json` contributes — twenty today, `custom1` to `custom20` — with its dark and light defaults. Any other name is handed to the theme as it is, so a theme color id such as `charts.red` works too.
+A color is a name: one of six terminal colors (`blue`, `magenta`, `red`, `cyan`, `green`, `yellow`), each standing for a `terminal.ansi*` theme color, or a slot `customN`, one for each theme color `folderRegexColor.customN` that `package.json` contributes (twenty today, `custom1` to `custom20`) with its dark and light defaults. Any other name is handed to the theme as it is, so a theme color id such as `charts.red` works too.
 
 A folder with no color takes a slot by its position in the list: the slot at that position among those no folder names. A named folder uses up a position as well, so a free slot can be skipped; past the last free slot a folder takes the slot at its position among all twenty-six, and past the twenty-sixth the count starts again.
 

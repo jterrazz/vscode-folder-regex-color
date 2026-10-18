@@ -1,10 +1,10 @@
 # Release
 
-Folder Regex Color is published to the Visual Studio Marketplace by hand, from a developer's machine; the shared `validate` workflow of `jterrazz-actions` runs `make build`, `make lint`, `make test` and `make mutation` on every push and pull request — the mutation run measuring the lines the push or pull request changed — and publishes nothing.
+Folder Regex Color is published to the Visual Studio Marketplace by hand, from a developer's machine; the shared `validate` workflow of `jterrazz-actions` runs `make build`, `make lint`, `make test` and `make mutation` on every push and pull request (the mutation run measuring the lines the push or pull request changed) and publishes nothing.
 
 ## Packaging
 
-`npm run vsix` runs `vsce package`. Before `vsce` reads the tree, npm's `vscode:prepublish` hook runs `npm run build`, so `dist/` is rebuilt from `src/`. `.vscodeignore` then leaves out everything but `dist/index.cjs`, `images/`, the README and the manifest — the ESM copy and the declarations the library build also writes into `dist/` stay out; `npx vsce ls` lists what the archive would hold.
+`npm run vsix` runs `vsce package`. Before `vsce` reads the tree, npm's `vscode:prepublish` hook runs `npm run build`, so `dist/` is rebuilt from `src/`. `.vscodeignore` then leaves out everything but `dist/index.cjs`, `images/`, the README and the manifest; the ESM copy and the declarations the library build also writes into `dist/` stay out. `npx vsce ls` lists what the archive would hold.
 
 ## Publishing
 

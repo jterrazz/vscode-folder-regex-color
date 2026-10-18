@@ -1,4 +1,4 @@
-# Folder Regex Color — the manual
+# Folder Regex Color: the manual
 
 A VS Code extension that colors and symbol-tags the paths of a workspace whose path matches a regex. What it does for a user, and its settings, are the repository's README; this page lists every page of the manual, by what the reader came to do.
 

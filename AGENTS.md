@@ -1,4 +1,4 @@
-# Agent brief — Folder Regex Color
+# Agent brief: Folder Regex Color
 
 A VS Code extension that colors and symbol-tags folders by regex. This file **routes**; it does not restate what the manual says.
 
@@ -6,7 +6,7 @@ A VS Code extension that colors and symbol-tags folders by regex. This file **ro
 
 The manual is `docs/`, mapped by [docs/README.md](docs/README.md); the user-facing description and settings are the root `README.md`.
 
-| Working on…                                       | Read                                                           |
+| Working on                                        | Read                                                           |
 | ------------------------------------------------- | -------------------------------------------------------------- |
 | The provider, how a folder gets its color, `main` | [docs/concepts/architecture.md](docs/concepts/architecture.md) |
 | The declaration, the gestures, the build, a slot  | [docs/guides/develop.md](docs/guides/develop.md)               |
