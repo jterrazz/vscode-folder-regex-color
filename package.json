@@ -24,8 +24,8 @@
         "publish": "vsce publish"
     },
     "devDependencies": {
-        "@jterrazz/test": "^18.0.0",
-        "@jterrazz/typescript": "^11.1.0",
+        "@jterrazz/test": "^18.0.2",
+        "@jterrazz/typescript": "^11.1.1",
         "@types/node": "^24.19.1",
         "@types/vscode": "^1.78.0",
         "@vscode/vsce": "^4.0.0",
