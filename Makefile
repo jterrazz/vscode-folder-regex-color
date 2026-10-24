@@ -17,7 +17,7 @@ fix: node_modules/.install
 
 # invariant: the specs load the extension VS Code loads, dist/index.cjs.
 test: build
-	npm test
+	npx typescript test
 
 mutation: build
 	npx typescript mutation
