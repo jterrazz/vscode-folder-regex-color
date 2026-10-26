@@ -1,6 +1,6 @@
 .artifacts/**
 .github/**
-.jterrazz/**
+.studio/**
 .vscode/**
 docs/**
 node_modules/**
@@ -10,7 +10,7 @@ src/**
 .npmrc
 CLAUDE.md
 Makefile
-jterrazz.config.ts
+studio.config.ts
 oxfmt.config.ts
 oxlint.config.ts
 tsconfig.json

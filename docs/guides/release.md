@@ -1,6 +1,6 @@
 # Release
 
-Folder Regex Color is published to the Visual Studio Marketplace by hand, from a developer's machine; the shared `validate` workflow of `jterrazz-actions` runs `make build`, `make lint`, `make test` and `make mutation` on every push and pull request (the mutation run measuring the lines the push or pull request changed) and publishes nothing.
+Folder Regex Color is published to the Visual Studio Marketplace by hand, from a developer's machine; the shared `validate` workflow of `studio-actions` runs `make build`, `make lint`, `make test` and `make mutation` on every push and pull request (the mutation run measuring the lines the push or pull request changed) and publishes nothing.
 
 ## Packaging
 

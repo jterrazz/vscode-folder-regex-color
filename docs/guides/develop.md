@@ -4,7 +4,7 @@ How a change to Folder Regex Color is made: the declaration, the gestures, the b
 
 ## The declaration
 
-The repository is a consumer of `@jterrazz/typescript` and `@jterrazz/test`, and `jterrazz.config.ts` says what it is: a `library` on `node` (a module its host imports through the manifest's `main`) with `"private": true`, since it is published to the Visual Studio Marketplace and never to npm, so the Publish pass leaves it. It declares one root beside the spine, `images/`, the Marketplace icon and the README's screenshot the `.vsix` ships. `oxlint.config.ts`, `oxfmt.config.ts`, `tsconfig.json` and `vitest.config.ts` are derived from it by `typescript fix`; none is edited by hand.
+The repository is a consumer of `@jterrazz/typescript` and `@jterrazz/test`, and `studio.config.ts` says what it is: a `library` on `node` (a module its host imports through the manifest's `main`) with `"private": true`, since it is published to the Visual Studio Marketplace and never to npm, so the Publish pass leaves it. It declares one root beside the spine, `images/`, the Marketplace icon and the README's screenshot the `.vsix` ships. `oxlint.config.ts`, `oxfmt.config.ts`, `tsconfig.json` and `vitest.config.ts` are derived from it by `typescript fix`; none is edited by hand.
 
 ## The gestures
 
