@@ -29,5 +29,3 @@ make install
 | Run the specs              | `make test`       |
 | Package the `.vsix`        | `npm run vsix`    |
 | Publish to the Marketplace | `npm run publish` |
-
-`CLAUDE.md` at the root is a symlink to this file: one brief, two names, no second copy.
